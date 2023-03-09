@@ -1,24 +1,33 @@
 clear, close all;
 
-Picture(:,:,:,1) = imread("Picture\Basin.png");
-Picture(:,:,:,2) = imread("Picture\Bonfire.png");
-Picture(:,:,:,3) = imread("Picture\Brush.png");
-Picture(:,:,:,4) = imread("Picture\Carrot.png");
-Picture(:,:,:,5) = imread("Picture\ChineseCabbage.png");
 
-Picture(:,:,:,6) = imread("Picture\Corn.png");
-Picture(:,:,:,7) = imread("Picture\FeedingBottle.png");
-Picture(:,:,:,8) = imread("Picture\Fork.png");
-Picture(:,:,:,9) = imread("Picture\Grass.png");
-Picture(:,:,:,10) = imread("Picture\RubberGlove.png");
+PicCard = {
+flipud(imread("Picture\Basin.png"));
+flipud(imread("Picture\Bonfire.png"));
+flipud(imread("Picture\Brush.png"));
+flipud(imread("Picture\Carrot.png"));
+flipud(imread("Picture\ChineseCabbage.png"));
+flipud(imread("Picture\Corn.png"));
+flipud(imread("Picture\FeedingBottle.png"));
+flipud(imread("Picture\Fork.png"));
+flipud(imread("Picture\Grass.png"));
+flipud(imread("Picture\RubberGlove.png"));
+flipud(imread("Picture\Corn.png"));
+flipud(imread("Picture\FeedingBottle.png"));
+flipud(imread("Picture\Fork.png"));
+flipud(imread("Picture\Grass.png"));
+flipud(imread("Picture\RubberGlove.png"));
+flipud(imread("Picture\WoolBall.jpg"));
+};
 
-Picture(:,:,:,11) = imread("Picture\Corn.png");
-Picture(:,:,:,12) = imread("Picture\FeedingBottle.png");
-Picture(:,:,:,13) = imread("Picture\Fork.png");
-Picture(:,:,:,14) = imread("Picture\Grass.png");
-Picture(:,:,:,15) = imread("Picture\RubberGlove.png");
+picBkg = flipud(imread("Picture\background.png"));
+picFence = flipud(imread("Picture\fence.png"));
 
 hdMainFig=figure('units','pixels','position',[500 100 1.5*1080/3 1.5*1500/3],...
     'Numbertitle','off','menubar','none','resize','on','name','Sheep A Sheep');
 hdAx=axes('Parent',hdMainFig,'Position',[0,0,1,1],'XLim',[0,1080],'YLim',[0,1500],...
     'XColor','none','YColor','none','XTick',[],'YTick',[],'Color',[195,254,138]./255);
+hold on
+image(hdAx,[0,1080],[0,1500],picBkg);
+image(hdAx,[0,1080],[0,295],picFence);
+
